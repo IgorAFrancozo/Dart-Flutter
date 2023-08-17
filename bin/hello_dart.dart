@@ -34,7 +34,9 @@ void main() {
 
   print('A multiplicação entre "pi e 4" é: ${hello_dart.multiply(pi, 7)} !\n');
 
-  List<String> listaNomes = [nome, nome1, nome2];
+  List<String> listaNomes = [nome, nome1, nome2]; // Lista com limitação do tipo String
 
   print('O primeiro nome da lista é: ${listaNomes.getRange(0, 1)}.\nTodos os nomes na lista: $listaNomes');
+
+  //Lista dinâmica independente de tipo
 }
