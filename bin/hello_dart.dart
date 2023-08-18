@@ -32,11 +32,25 @@ void main() {
     contador++;
   }
 
-  print('A multiplicação entre "pi e 4" é: ${hello_dart.multiply(pi, 7)} !\n');
+  print(
+      'A multiplicação entre "pi e 4" é: ${hello_dart.multiply(pi, 7)} !\n'); // Método com parametros para multiplicar
 
-  List<String> listaNomes = [nome, nome1, nome2]; // Lista com limitação do tipo String
+  List<String> listaNomes = [
+    nome,
+    nome1,
+    nome2
+  ]; // Lista com limitação do tipo String
 
-  print('O primeiro nome da lista é: ${listaNomes.getRange(0, 1)}.\nTodos os nomes na lista: $listaNomes');
+  print(
+      'O primeiro nome da lista é: ${listaNomes.getRange(0, 1)}.\nTodos os nomes na lista: $listaNomes');
 
-  //Lista dinâmica independente de tipo
+  List<dynamic> dinamica = [
+    1,
+    "O filme é bom?",
+    true
+  ]; //Lista dinâmica independente de tipo
+
+  String frase =
+      "O Jogador Nº ${dinamica[0]} é um Filme de ficção com muitas relações do mundo Geek. ${dinamica[1]} ${dinamica[2]}";
+  print(frase);
 }
