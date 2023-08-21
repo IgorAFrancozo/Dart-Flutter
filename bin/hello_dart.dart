@@ -42,7 +42,7 @@ void main() {
   ]; // Lista com limitação do tipo String
 
   print(
-      'O primeiro nome da lista é: ${listaNomes.getRange(0, 1)}.\nTodos os nomes na lista: $listaNomes');
+      'O primeiro nome da lista é: ${listaNomes.getRange(0, 1)}.\nTodos os nomes na lista: $listaNomes\nOs usuários estão cadastrados? $ehCadastrado');
 
   List<dynamic> dinamica = [
     1,
