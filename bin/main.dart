@@ -1,5 +1,3 @@
-
-
 import 'package:hello_dart/enums/StatusTarefa.dart';
 import 'package:hello_dart/models/Quadro.dart';
 import 'package:hello_dart/models/Tarefa.dart';
@@ -34,7 +32,7 @@ void main() {
   for (var quadro in gerenciador.quadros) {
     print('Quadro: ${quadro.nomeQuadro}');
     for (var tarefa in quadro.tarefas) {
-      print(' - ${tarefa.nomeTarefa} (${tarefa.status})');
+      print('Tarefa: ${tarefa.nomeTarefa} (${tarefa.status})');
     }
   }
 
@@ -46,9 +44,21 @@ void main() {
   for (var quadro in gerenciador.quadros) {
     print('Quadro: ${quadro.nomeQuadro}');
     for (var tarefa in quadro.tarefas) {
-      print(' - ${tarefa.nomeTarefa} (${tarefa.status})');
+      print('Tarefa: ${tarefa.nomeTarefa} (${tarefa.status})');
       if (tarefa.status == StatusTarefa.Fazendo) {
-        print('   - Tempo decorrido: ${tarefa.temporizador?.elapsed}');
+        if (tarefa.temporizador?.isRunning == true) {
+          print(
+              'Tarefa sendo realizada - Tempo decorrido: ${tarefa.temporizador?.elapsed}');
+        } else {
+          tarefa.temporizador?.start();
+          print('Tarefa iniciada.');
+        }
+      } else if (tarefa.status == StatusTarefa.Concluido) {
+        if (tarefa.temporizador?.isRunning == true) {
+          tarefa.temporizador?.stop();
+        }
+        print(
+            'Tarefa Concluída - Tempo total: ${tarefa.temporizador?.isRunning == true ? tarefa.temporizador?.elapsed : '0 segundos'}');
       }
     }
   }

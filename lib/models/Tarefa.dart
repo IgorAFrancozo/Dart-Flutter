@@ -6,7 +6,7 @@ class Tarefa {
   DateTime dataCriacao;
   DateTime dataConclusao;
   StatusTarefa status;
-  Stopwatch? temporizador;
+  Stopwatch? temporizador = Stopwatch();
 
   Tarefa({
     required this.nomeResponsavel,
